@@ -26,3 +26,18 @@ WHERE id NOT IN (
 
 DELETE FROM TagAngBiblia_verses
 WHERE id=63802;
+
+--check duplicates
+SELECT
+    book_id,
+    chapter,
+    verse,
+    text,
+    COUNT(*) AS total
+FROM TagAngBiblia_verses
+GROUP BY
+    book_id,
+    chapter,
+    verse,
+    text
+HAVING COUNT(*) > 1;
