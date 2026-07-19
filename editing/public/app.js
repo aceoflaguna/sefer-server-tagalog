@@ -98,24 +98,30 @@ async function search() {
       }
     };
 
-    saveBtn.onclick = async () => {
-      await fetch("/api/save", {
+saveBtn.onclick = async () => {
+
+    const response = await fetch("/api/save", {
         method: "POST",
-
         headers: {
-          "Content-Type": "application/json",
+            "Content-Type": "application/json"
         },
-
         body: JSON.stringify({
-          id: r.id,
+            id: r.id,
+            text: textarea.value
+        })
+    });
 
-          text: textarea.value,
-        }),
-      });
+    const result = await response.json();
 
-      saveBtn.style.display = "none";
-      cancelBtn.style.display = "none";
-    };
+    if (result.success) {
+        div.style.transition = "opacity .3s";
+        div.style.opacity = "0";
+
+        setTimeout(() => {
+            div.remove();
+        }, 300);
+    }
+};
 
     cancelBtn.onclick = () => {
       textarea.value = original;
