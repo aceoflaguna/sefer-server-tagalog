@@ -88,12 +88,15 @@
             </div>
 
         </div>
+        <div class="text-center w-75 mx-auto mt-5">
+            <div id="reference"></div>
+        </div>
 
         <div id="verseContainer" class="flex-grow-1 d-flex justify-content-center align-items-center">
 
             <div class="text-center w-75">
 
-                <div id="reference"></div>
+               
 
                 <div id="verseText" class="mt-4">
                     Search for a Bible verse.
@@ -336,7 +339,7 @@
 
             });
 
-            history = history.slice(0, 10);
+            history = history.slice(0, 20);
 
             localStorage.setItem(historyKey, JSON.stringify(history));
 
