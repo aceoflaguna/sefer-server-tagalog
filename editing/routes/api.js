@@ -8,7 +8,7 @@ const db = new sqlite3.Database("../sqlite/TagAngBiblia.db");
 router.get("/books", (req, res) => {
 
     db.all(
-        "SELECT id,name FROM TagAngBiblia_books WHERE id < 67 ORDER BY id",
+        "SELECT id,name FROM TagAngBiblia_books WHERE id < 40 ORDER BY id",
         [],
         (err, rows) => {
 
@@ -37,6 +37,7 @@ router.get("/search", (req, res) => {
     JOIN TagAngBiblia_books b
         ON b.id=v.book_id
     WHERE v.text LIKE ?
+    AND v.book_id < 40
     `;
 
     const params = [`%${keyword}%`];

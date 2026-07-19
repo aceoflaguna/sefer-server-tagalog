@@ -41,36 +41,32 @@ async function search() {
     const highlighted = highlight(r.text, keyword);
 
     div.innerHTML = `
-
     <div class="card-body">
 
-    <h5>${r.book} ${r.chapter}:${r.verse}</h5>
+        <h5>${r.book} ${r.chapter}:${r.verse}</h5>
 
-    <p>${highlighted}</p>
+        <p>${highlighted}</p>
 
-    <textarea
-    class="form-control editor"
-    rows="3">${r.text}</textarea>
+        <textarea
+            class="form-control editor"
+            rows="3">${r.text}</textarea>
 
-    <div class="mt-2">
+        <div class="mt-2">
+            <button class="btn btn-success save">Save</button>
+            <button class="btn btn-secondary cancel">Cancel</button>
+        </div>
 
-    <button class="btn btn-success save">
-    Save
-    </button>
-
-    <button class="btn btn-secondary cancel">
-    Cancel
-    </button>
-
-    </div>
+        <button class="btn btn-danger btn-sm remove-btn">
+            Remove
+        </button>
 
     </div>
-
-`;
+    `;
 
     const textarea = div.querySelector(".editor");
     const saveBtn = div.querySelector(".save");
     const cancelBtn = div.querySelector(".cancel");
+    const removeBtn = div.querySelector(".remove-btn");
 
     textarea.style.display = "none";
     saveBtn.style.display = "none";
@@ -129,6 +125,11 @@ saveBtn.onclick = async () => {
       saveBtn.style.display = "none";
       cancelBtn.style.display = "none";
     };
+
+    removeBtn.onclick = () => {
+        div.remove();
+    };
+
 
     results.appendChild(div);
   });
