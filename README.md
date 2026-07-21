@@ -29,7 +29,7 @@ http://localhost:4000
 The search word available at:
 
 ```
-http://localhost:3000/search/
+http://localhost:4000/search/
 ```
 
 ## Features
