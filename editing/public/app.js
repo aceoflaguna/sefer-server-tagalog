@@ -44,6 +44,9 @@ async function search() {
     <div class="card-body">
 
         <h5>${r.book} ${r.chapter}:${r.verse}</h5>
+        <button class="btn btn-danger btn-sm remove-btn">
+            Remove
+        </button>
 
         <p>${highlighted}</p>
 
@@ -52,13 +55,10 @@ async function search() {
             rows="3">${r.text}</textarea>
 
         <div class="mt-2">
-            <button class="btn btn-success save">Save</button>
-            <button class="btn btn-secondary cancel">Cancel</button>
+            <button class="btn btn-sm btn-success save">Save</button>
+            <button class="btn btn-sm btn-secondary cancel">Cancel</button>
         </div>
 
-        <button class="btn btn-danger btn-sm remove-btn">
-            Remove
-        </button>
 
     </div>
     `;

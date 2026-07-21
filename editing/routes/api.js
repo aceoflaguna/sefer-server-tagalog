@@ -3,7 +3,7 @@ const sqlite3 = require("sqlite3").verbose();
 
 const router = express.Router();
 
-const db = new sqlite3.Database("../sqlite/TagAngBiblia.db");
+const db = new sqlite3.Database("../sqlite/TagAngBiblia_YHWH.db");
 
 router.get("/books", (req, res) => {
 

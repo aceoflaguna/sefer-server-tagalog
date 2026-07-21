@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname, "public")));
 const PORT = process.env.PORT || 4000;
 
 // Open SQLite database
-const db = new sqlite3.Database("./sqlite/TagAngBiblia.db", (err) => {
+const db = new sqlite3.Database("./sqlite/TagAngBiblia_YHWH.db", (err) => {
     if (err) {
         console.error("Database connection failed:", err.message);
     } else {
